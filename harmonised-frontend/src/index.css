@@ -1,0 +1,205 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/SeasonalChart.css */
+.calendar-header {
+  font-size: 1.25rem; /* 20px */
+  font-weight: bold;
+  margin-top: 1.25rem; /* 20px */
+  text-align: center; /* Center the header text */
+}
+
+.seasonal-chart-container {
+  margin-top: 1.25rem; /* 20px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.4375rem; /* 55px */
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 1.25rem; /* 20px */
+}
+
+.image-container {
+  width: 100%; /* Make the container span the full width */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  overflow: hidden; /* Hide any overflow content */
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.sowing-cell {
+  background-color: #ffcc00; /* Change to your desired color */
+  color: #fff; /* Change text color if needed */
+  font-weight: bold; /* Make the text bold */
+  cursor: pointer; /* Ensure the cell is clickable */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.sowing-cell:hover {
+  background-color: #ffaa00; /* Slightly darker shade for hover effect */
+}
+
+.sowing-cell-apr-may {
+  background-color: #6668cc; /* Different color for April-May */
+  color: #fff; /* Change text color if needed */
+  font-weight: bold; /* Make the text bold */
+  cursor: pointer; /* Ensure the cell is clickable */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.sowing-cell-apr-may:hover {
+  background-color: #4c53af; /* Slightly darker shade for hover effect */
+}
+
+.seasonal-chart {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  border: 1px solid #cccccc;
+  padding: 0.5rem; /* 8px */
+  text-align: center;
+}
+
+.cell:first-child {
+  font-weight: bold;
+}
+
+.top-row .top-cell {
+  background-color: #087a4af8; /* Blue color for top row */
+  color: white; /* White text color for top row */
+  font-weight: bold; /* Optional: Make text bold */
+  padding: 0.75rem; /* 12px */
+}
+
+/* Hover effect for entire column */
+.row .cell:hover {
+  background-color: #d1e7dd; /* Lighter green color on hover */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Apply hover effect on columns */
+.cell-hover {
+  background-color: #bcd4cc;
+}
+
+/* Styles for the button container */
+.button-container {
+  margin-top: 1.25rem; /* 20px */
+  display: flex;
+  justify-content: center;
+  gap: 0.625rem; /* 10px */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+/* Styles for the buttons */
+.button {
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  border: none;
+  border-radius: 0.3125rem; /* 5px */
+  background-color: #087a4af8;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem; /* 16px */
+}
+
+.button:hover {
+  background-color: #065a34;
+}
+
+.dropdown-container {
+  margin-top: 1.25rem; /* 20px */
+  border: 1px solid #ddd;
+  padding: 1.25rem; /* 20px */
+  background-color: #f9f9f9; /* Change to your desired background color */
+  width: 100%; /* Full width */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .calendar-header {
+    font-size: 1rem; /* 16px */
+  }
+
+  .seasonal-chart-container {
+    padding: 1.25rem; /* 20px */
+  }
+
+  .button-container {
+    gap: 0.3125rem; /* 5px */
+  }
+
+  .button {
+    font-size: 0.875rem; /* 14px */
+    padding: 0.5rem 1rem; /* 8px 16px */
+  }
+
+  .dropdown-container {
+    padding: 0.625rem; /* 10px */
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-header {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .seasonal-chart-container {
+    padding: 0.625rem; /* 10px */
+  }
+
+  .button {
+    font-size: 0.75rem; /* 12px */
+    padding: 0.375rem 0.75rem; /* 6px 12px */
+  }
+
+  .dropdown-container {
+    padding: 0.3125rem; /* 5px */
+  }
+}
+.toggle-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-button.active {
+  background-color:  #28a745;;
+  color: #fff;
+  border-color:  #28a745;;
+}
+
+.toggle-button:hover {
+  background-color: #28a745; /* Green color for hover */
+  color: #fff;
+}
